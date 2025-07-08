@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.fasterxml.jackson.annotation.JsonFormat.Shape;
+
 @Controller
 public class MainController {
 
@@ -48,7 +50,19 @@ public class MainController {
     }
 
     private List<Song> getBestSongs() {
-        return;
-    }
 
+        List<Song> allSongs = new ArrayList<>();
+        allSongs.add(new Song("1", "Bohemian Rhapsody - Queen"));
+        allSongs.add(new Song("2", "Imagine - John Lennon"));
+        allSongs.add(new Song("3", "Billie Jean - Michael Jackson"));
+        allSongs.add(new Song("4", "Smells Like Teen Spirit - Nirvana"));
+        allSongs.add(new Song("5", "Hey Jude - The Beatles"));
+        allSongs.add(new Song("6", "Rolling in the Deep - Adele"));
+        allSongs.add(new Song("7", "Blinding Lights - The Weeknd"));
+        allSongs.add(new Song("8", "Shape of You - Ed Sheeran"));
+        allSongs.add(new Song("9", "Lose Yourself - Eminem"));
+        allSongs.add(new Song("10", "Shallow - Lady Gaga & Bradley Cooper"));
+
+        return allSongs.subList(0, 5);
+    }
 }
