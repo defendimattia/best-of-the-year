@@ -13,4 +13,16 @@ public class MainController {
         return "home";
     }
 
+    @GetMapping("/movies")
+    public String movies() {
+
+        return "movies";
+    }
+
+    @GetMapping("/songs")
+    public String songs() {
+
+        return "songs";
+    }
+
 }
