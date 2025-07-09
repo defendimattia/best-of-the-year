@@ -61,6 +61,20 @@ public class MainController {
         return "songs";
     }
 
+    @GetMapping("/songs/{songID}")
+    public String songsID(@PathVariable String songID, Model model) {
+
+        for (Song song : getBestSongs()) {
+            if (song.getId().contentEquals(songID)) {
+
+                Song selectedSong = song;
+                model.addAttribute("selectedSong", selectedSong);
+                break;
+            }
+        }
+        return "singleSong";
+    }
+
     private List<Movie> getBestMovies() {
 
         List<Movie> allMovies = new ArrayList<>();
