@@ -11,17 +11,7 @@
 <body>
     <th:block th:replace="~{fragments :: navbar}"></th:block>
 
-    <div class="container py-5 text-center">
-
-        <h1>Best Movies</h1>
-        <div class="container p-0">
-            <ul class="list-group rounded-0">
-                <li th:each="movie : ${topMovies}" th:text="${movie}"
-                    class="list-group-item border-black"></li>
-
-            </ul>
-        </div>
-    </div>
+    <th:block th:replace="~{fragments :: list('Movies', ${topMovies})}"></th:block>
 </body>
 
 </html>
