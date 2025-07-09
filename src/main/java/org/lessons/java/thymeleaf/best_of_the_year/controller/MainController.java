@@ -34,7 +34,7 @@ public class MainController {
     }
 
     @GetMapping("/movies/{movieID}")
-    public String moviesID(@PathVariable String movieID, Model model) {
+    public String selectedMovie(@PathVariable String movieID, Model model) {
 
         for (Movie movie : getBestMovies()) {
             if (movie.getId().contentEquals(movieID)) {
@@ -44,7 +44,7 @@ public class MainController {
                 break;
             }
         }
-        return "singleMovie";
+        return "selectedMovie";
     }
 
     @GetMapping("/songs")
@@ -62,7 +62,7 @@ public class MainController {
     }
 
     @GetMapping("/songs/{songID}")
-    public String songsID(@PathVariable String songID, Model model) {
+    public String selectedSong(@PathVariable String songID, Model model) {
 
         for (Song song : getBestSongs()) {
             if (song.getId().contentEquals(songID)) {
@@ -72,7 +72,7 @@ public class MainController {
                 break;
             }
         }
-        return "singleSong";
+        return "selectedSong";
     }
 
     private List<Movie> getBestMovies() {
