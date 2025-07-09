@@ -21,13 +21,29 @@ public class MainController {
     }
 
     @GetMapping("/movies")
-    public String movies() {
+    public String movies(Model model) {
+
+        List<String> moviesString = new ArrayList<>();
+
+        for (Movie movie : getBestMovies()) {
+            moviesString.add(movie.getTitle());
+        }
+
+        model.addAttribute("topMovies", String.join(", ", moviesString));
 
         return "movies";
     }
 
     @GetMapping("/songs")
-    public String songs() {
+    public String songs(Model model) {
+
+        List<String> songsString = new ArrayList<>();
+
+        for (Song song : getBestSongs()) {
+            songsString.add(song.getTitle());
+        }
+
+        model.addAttribute("topSongs", String.join(", ", songsString));
 
         return "songs";
     }
