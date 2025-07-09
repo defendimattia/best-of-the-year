@@ -35,7 +35,15 @@ public class MainController {
 
     @GetMapping("/movies/{movieID}")
     public String moviesID(@PathVariable String movieID, Model model) {
-        model.addAttribute("movieID", movieID);
+
+        for (Movie movie : getBestMovies()) {
+            if (movie.getId().contentEquals(movieID)) {
+
+                Movie selectedMovie = movie;
+                model.addAttribute("selectedMovie", selectedMovie);
+                break;
+            }
+        }
         return "singleMovie";
     }
 
