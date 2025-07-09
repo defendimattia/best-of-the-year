@@ -67,7 +67,7 @@ public class MainController {
         allMovies.add(new Movie("9", "The Dark Knight"));
         allMovies.add(new Movie("10", "Batman Begins"));
 
-        return allMovies.subList(0, 5);
+        return allMovies;
     }
 
     private List<Song> getBestSongs() {
@@ -84,6 +84,6 @@ public class MainController {
         allSongs.add(new Song("9", "Lose Yourself", "Eminem"));
         allSongs.add(new Song("10", "Shallow", "Lady Gaga & Bradley Cooper"));
 
-        return allSongs.subList(0, 5);
+        return allSongs;
     }
 }
