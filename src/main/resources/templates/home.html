@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
     <title>Home</title>
 
-    <th:block th:replace="~{ fragments :: styles}"></th:block>
+    <th:block th:replace="~{fragments :: styles}"></th:block>
 </head>
 
 <body>
+    <th:block th:replace="~{fragments :: navbar}"></th:block>
+
+
     <h1>Best of the year by [[${username}]]</h1>
 </body>
 

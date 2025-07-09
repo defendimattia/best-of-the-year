@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <title>Movies</title>
 
-    <th:block th:replace="~{ fragments :: styles}"></th:block></head>
+    <th:block th:replace="~{ fragments :: styles}"></th:block>
+</head>
 
 <body>
+    <th:block th:replace="~{fragments :: navbar}"></th:block>
+
     <h1 th:text='${topMovies}'></h1>
 </body>
 
