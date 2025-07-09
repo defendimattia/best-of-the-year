@@ -8,6 +8,7 @@ import org.lessons.java.thymeleaf.best_of_the_year.model.Song;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class MainController {
@@ -30,6 +31,12 @@ public class MainController {
         model.addAttribute("topMovies", String.join(", ", moviesString));
 
         return "movies";
+    }
+
+    @GetMapping("/movies/{movieID}")
+    public String moviesID(@PathVariable String movieID, Model model) {
+        model.addAttribute("movieID", movieID);
+        return "singleMovie";
     }
 
     @GetMapping("/songs")
