@@ -22,13 +22,13 @@ public class MainController {
     @GetMapping("/movies")
     public String movies(Model model) {
 
-        List<String> moviesString = new ArrayList<>();
+        List<String> topMovies = new ArrayList<>();
 
         for (Movie movie : getBestMovies()) {
-            moviesString.add(movie.getTitle());
+            topMovies.add(movie.getTitle());
         }
 
-        model.addAttribute("topMovies", String.join(", ", moviesString));
+        model.addAttribute("topMovies", topMovies);
 
         return "movies";
     }
@@ -50,13 +50,13 @@ public class MainController {
     @GetMapping("/songs")
     public String songs(Model model) {
 
-        List<String> songsString = new ArrayList<>();
+        List<String> topSongs = new ArrayList<>();
 
         for (Song song : getBestSongs()) {
-            songsString.add(song.getTitle());
+            topSongs.add(song.getTitle());
         }
 
-        model.addAttribute("topSongs", String.join(", ", songsString));
+        model.addAttribute("topSongs", topSongs);
 
         return "songs";
     }
