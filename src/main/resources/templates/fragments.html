@@ -28,14 +28,16 @@
 </th:block>
 
 <!-- list -->
-<th:block th:fragment="list(argument, array)">
+<th:block th:fragment="list(argument, array, moviesORsongs)">
     <div class="container py-5 text-center">
 
         <h1 th:text="'Best ' + ${argument}"></h1>
 
         <div class="container p-0">
             <ul class="list-group rounded-0">
-                <li th:each="item : ${array}" th:text="${item}" class="list-group-item border-black"></li>
+                <li th:each="item : ${array}" class="list-group-item border-black">
+                    <a th:href="@{'/' + ${moviesORsongs} + '/' + ${item.id}}" th:text="${item.title}"></a>
+                </li>
             </ul>
         </div>
 
