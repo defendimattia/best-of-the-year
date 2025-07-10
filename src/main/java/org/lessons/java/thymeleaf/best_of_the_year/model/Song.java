@@ -25,7 +25,7 @@ public class Song implements Serializable {
         return this.title;
     }
 
-    public String getAuthor(String newAuthor) {
+    public String getAuthor() {
         return this.author;
     }
 
