@@ -22,10 +22,10 @@ public class MainController {
     @GetMapping("/movies")
     public String movies(Model model) {
 
-        List<String> topMovies = new ArrayList<>();
+        List<Movie> topMovies = new ArrayList<>();
 
         for (Movie movie : getBestMovies()) {
-            topMovies.add(movie.getTitle());
+            topMovies.add(movie);
         }
 
         model.addAttribute("topMovies", topMovies);
@@ -50,10 +50,10 @@ public class MainController {
     @GetMapping("/songs")
     public String songs(Model model) {
 
-        List<String> topSongs = new ArrayList<>();
+        List<Song> topSongs = new ArrayList<>();
 
         for (Song song : getBestSongs()) {
-            topSongs.add(song.getTitle());
+            topSongs.add(song);
         }
 
         model.addAttribute("topSongs", topSongs);
